@@ -60,22 +60,22 @@ CustN = len(Cust_lat_long)  # Number of customers
 
 Demands = np.array(df1[df1.columns[9:102]])  # Demands separated by time units
 
-Demands = np.array(np.hsplit(Demands, ProdN))  # Deviding demands per products
+Demands = np.array(np.hsplit(Demands, ProdN))  # Dividing demands per products
 
-ind1 = finalind[FactN:TDCN]
-ind2 = finalind[FactN + TDCN:]
-a11 = np.zeros((TDCN, FactN), dtype=np.uint8)
-a12 = np.zeros((CustN, TDCN), dtype=np.uint8)
+#ind1 = finalind[FactN:TDCN]
+#ind2 = finalind[FactN + TDCN:]
+#a11 = np.zeros((TDCN, FactN), dtype=np.uint8)
+#a12 = np.zeros((CustN, TDCN), dtype=np.uint8)
 
-for c in range(CustN):
-    for dc in range(TDCN):
-        if ind2[c] == dc:
-            a12[c][dc] = 1
+#for c in range(CustN):
+    #for dc in range(TDCN):
+        #if ind2[c] == dc:
+            #a12[c][dc] = 1
 
-for dc in range(TDCN):
-    for fact in range(FactN):
-        if ind1[dc] == fact:
-            a11[dc][fact] = 1
+#for dc in range(TDCN):
+    #for fact in range(FactN):
+        #if ind1[dc] == fact:
+            #a11[dc][fact] = 1
 
 dist_cust_dc = np.zeros(shape=(CustN, TDCN))
 for c in range(CustN):
